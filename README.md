@@ -108,5 +108,4 @@ You can run tests for a single day:
 ```bash
 pytest tests/test_day01.py
 ```
-
 This project is maintained as a public showcase of Python problem-solving and coding practices. 
