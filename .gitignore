@@ -1,3 +1,5 @@
 *.swp
 setenv.zsh
 *~
+*.pyc
+.venv
