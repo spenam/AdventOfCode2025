@@ -3,3 +3,5 @@ setenv.zsh
 *~
 *.pyc
 .venv
+inputs
+__pycache__
