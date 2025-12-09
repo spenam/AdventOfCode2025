@@ -1,6 +1,6 @@
 from input_fetcher import get_input
 
-def parse_input(text: str) -> [list[tuple[int]], list[int]]:
+def parse_input(text: str) -> list[tuple[int]] | list[int]:
     """Parse raw puzzle input"""
     fresh: list[int] = []
     available: list[int] = []
