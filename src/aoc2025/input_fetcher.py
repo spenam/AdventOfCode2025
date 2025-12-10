@@ -13,7 +13,7 @@ class AdventOfCodeError(RuntimeError):
     pass
 
 
-def get_input(year: int, day: int, *, force_refresh: bool = False) -> str:
+def get_input(year: int, day: int, *, force_refresh: bool = False, test: bool = False) -> str:
     """
     Fetch Advent of Code puzzle input for given year and day.
 
@@ -27,6 +27,13 @@ def get_input(year: int, day: int, *, force_refresh: bool = False) -> str:
     target_dir = INPUTS_DIR / str(year)
     target_dir.mkdir(parents=True, exist_ok=True)
     target_file = target_dir / f"input_{day_str}.txt"
+
+    if test:
+        test_file = target_dir / f"input_{day_str}_test.txt"
+        test_path = Path(test_file)
+        if not test_path.exists():
+            raise FileNotFoundError(f"Test input file not found: {test_path}")
+        return test_path.read_text(encoding="utf-8")
 
     # Return cached file if present and not forcing refresh
     if target_file.exists() and not force_refresh:
